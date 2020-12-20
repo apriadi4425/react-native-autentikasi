@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-	const BaseUrl = 'URL API LOGIN';
+	const BaseUrl = 'http://192.168.43.70:8000';
     const [IsLogin, setIsLogin] = useState(false);
     const [User, setUser] = useState({});
     const [Loading, setLoading] = useState(true);

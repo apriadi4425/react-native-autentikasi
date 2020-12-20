@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import { AuthContext } from '../provider/AuthProvider';
+import LoginScreen from '../screen/auth/LoginScreen';
 
 const AppStack = () => {
 	const {User, IsLogin, Loading, DoLogout} = useContext(AuthContext)
@@ -11,12 +12,11 @@ const AppStack = () => {
             :
             IsLogin ?
                 <View style={{flex : 1, justifyContent : 'center', alignItems : 'center'}}>
-                    <Text>Main Stack</Text>
+                    <Text style={{marginBottom : 10}}>Selamat Datang</Text>
+                    <Button title={"Log-Out"} onPress={DoLogout}/>
                 </View>
                             :
-                <View style={{flex : 1, justifyContent : 'center', alignItems : 'center'}}>
-                    <Text>Login Screen</Text>
-                </View>
+                <LoginScreen/>
     )
 }
 
